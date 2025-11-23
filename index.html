@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ankit - Order Food Online</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #15c492;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo img {
+            width: 100px;
+            filter: brightness(0) invert(1);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        header ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        header ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 85vh;
+
+            /* CHANGE ONLY THIS LINE FOR DIFFERENT FOOD BACKGROUND */
+            background: url("https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg?auto=compress&cs=tinysrgb&w=1600")
+                center/cover no-repeat;
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero img,
+        .hero p,
+        .hero input {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero img {
+            width: 160px;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .hero input {
+            margin-top: 25px;
+            width: 450px;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 60px 80px;
+            background: #000;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .delivery-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .delivery-card {
+            width: 300px;
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 20px;
+            transition: .3s;
+            box-shadow: 0 4px 12px rgba(98, 255, 0, 0.132);
+        }
+
+        .delivery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(179, 255, 0, 0.536);
+        }
+
+        .delivery-card h3 {
+            font-size: 20px;
+            color: #0c0c9d;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: #7f038a;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://shopankit.com/wp-content/uploads/2024/12/Ankit_logo_black-1024x361.png" alt="Brand">
+        </div>
+
+        <ul>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Add Restaurant</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Signup</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="https://logos.textgiraffe.com/logos/logo-name/Ankit-designstyle-boots-m.png" alt="Hero Logo">
+            <p>THIS IS THE BEST PLATFORM FOR BEST FOOD & FAST DELIVERY</p>
+            <input type="text" placeholder="Search for restaurant, cuisine or a dish">
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">Experience the Best Food Delivery</h2>
+            <p class="section-subtitle">
+                Fast delivery, fresh food, and top-rated restaurants — all in one place.
+            </p>
+
+            <div class="delivery-container">
+                <div class="delivery-card">
+                    <h3>Lightning Fast Delivery</h3>
+                    <p>Get food delivered hot within minutes.</p>
+                </div>
+
+                <div class="delivery-card">
+                    <h3>Top-Rated Restaurants</h3>
+                    <p>Choose from the top restaurants near you.</p>
+                </div>
+
+                <div class="delivery-card">
+                    <h3>Wide Variety of Cuisines</h3>
+                    <p>Explore Indian, Chinese, Italian & more.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        copyright © 2025 | All rights reserved
+    </footer>
+
+    <script>
+        // Fade animation
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(".hero img, .hero p, .hero input");
+
+            elements.forEach((ele, index) => {
+                ele.style.opacity = "0";
+                ele.style.transform = "translateY(20px)";
+                setTimeout(() => {
+                    ele.style.transition = "0.6s ease";
+                    ele.style.opacity = "1";
+                    ele.style.transform = "translateY(0)";
+                }, index * 200);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
